@@ -1,0 +1,54 @@
+set number
+set tabstop=4
+set expandtab
+set scrolloff=10
+
+syntax on
+
+set backspace=indent,eol,start  " more powerful backspacing
+
+call plug#begin()
+    Plug 'preservim/nerdtree'
+    Plug 'franbach/miramare'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+augroup ft_haskell
+            au!
+                au FileType haskell setlocal omnifunc=haskellcomplete#Complete
+augroup END
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" important!!
+set termguicolors
+
+" " the configuration options should be placed before `colorscheme miramare`
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+
+colorscheme miramare
+
+if executable('haskell-language-server-wrapper')
+          let g:coc_global_extensions = ['coc-json', 'coc-tsserver']
+if !isdirectory(expand('~/.vim'))
+            call mkdir(expand('~/.vim'), 'p')
+              endif
+
+let s:coc_settings = {
+                \ 'languageserver': {
+                \   'haskell': {
+                \     'command': 'haskell-language-server-wrapper.exe',
+                \     'args': ['--lsp'],
+                \     'rootPatterns': ['*.cabal', 'stack.yaml', 'cabal.project', 'package.yaml'],
+                \     'filetypes': ['haskell', 'lhaskell']
+                \   }
+                \ }
+                \ }
+
+call writefile([json_encode(s:coc_settings)], expand('~/.vim/coc-settings.json'))
+endif
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <C-Space> coc#refresh()
