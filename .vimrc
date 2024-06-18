@@ -11,6 +11,7 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'franbach/miramare'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'vim-airline/vim-airline'
 call plug#end()
 
 augroup ft_haskell
