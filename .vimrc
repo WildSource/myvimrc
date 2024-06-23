@@ -7,6 +7,10 @@ syntax on
 
 set backspace=indent,eol,start  " more powerful backspacing
 
+" now it is possible to paste many times over selected text
+xnoremap <expr> p 'pgv"'.v:register.'y`>'
+xnoremap <expr> P 'Pgv"'.v:register.'y`>'
+
 call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'franbach/miramare'
