@@ -17,6 +17,10 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-airline/vim-airline'
     Plug 'spolu/dwm.vim'
+    " for vim-hoogle to work install hoogle through cabal or stack
+    " although stack works a bit better
+    " then execute hoogle generate and hoogle data
+    Plug 'Twinside/vim-hoogle'
 call plug#end()
 
 augroup ft_haskell
