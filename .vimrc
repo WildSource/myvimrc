@@ -21,6 +21,8 @@ call plug#begin()
     " although stack works a bit better
     " then execute hoogle generate and hoogle data
     Plug 'Twinside/vim-hoogle'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 call plug#end()
 
 augroup ft_haskell
@@ -49,7 +51,7 @@ if !isdirectory(expand('~/.vim'))
 let s:coc_settings = {
                 \ 'languageserver': {
                 \   'haskell': {
-                \     'command': 'haskell-language-server-wrapper.exe',
+                \     'command': 'haskell-language-server-wrapper',
                 \     'args': ['--lsp'],
                 \     'rootPatterns': ['*.cabal', 'stack.yaml', 'cabal.project', 'package.yaml'],
                 \     'filetypes': ['haskell', 'lhaskell']
