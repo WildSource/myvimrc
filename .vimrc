@@ -1,5 +1,5 @@
 set number
-set tabstop=4
+set tabstop=22
 set expandtab
 set scrolloff=10
 
