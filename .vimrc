@@ -28,6 +28,8 @@ call plug#begin()
     Plug 'mattn/emmet-vim'
 call plug#end()
 
+let g:user_emmet_leader_key=','
+
 augroup ft_haskell
             au!
                 au FileType haskell setlocal omnifunc=haskellcomplete#Complete
