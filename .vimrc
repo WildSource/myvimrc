@@ -23,6 +23,8 @@ call plug#begin()
     Plug 'Twinside/vim-hoogle'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'yuezk/vim-js'
+    Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 augroup ft_haskell
