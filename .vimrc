@@ -25,6 +25,7 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'yuezk/vim-js'
     Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'mattn/emmet-vim'
 call plug#end()
 
 augroup ft_haskell
