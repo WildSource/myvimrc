@@ -31,8 +31,14 @@ call plug#end()
 let g:user_emmet_leader_key=','
 
 augroup ft_haskell
-            au!
-                au FileType haskell setlocal omnifunc=haskellcomplete#Complete
+    au!
+    au FileType haskell setlocal omnifunc=haskellcomplete#Complete
+augroup END
+
+" JavaScript/JSX-specific settings
+augroup ft_javascript
+    au!
+    au FileType javascript,typescripx,tsx setlocal tabstop=2 shiftwidth=2
 augroup END
 
 filetype plugin on
