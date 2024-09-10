@@ -13,7 +13,7 @@ xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
 call plug#begin()
     Plug 'preservim/nerdtree'
-    Plug 'franbach/miramare'
+    Plug 'nordtheme/vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-airline/vim-airline'
     Plug 'spolu/dwm.vim'
@@ -26,6 +26,8 @@ call plug#begin()
     Plug 'yuezk/vim-js'
     Plug 'mattn/emmet-vim'
 call plug#end()
+
+colorscheme nord
 
 let g:user_emmet_leader_key=','
 
@@ -45,12 +47,6 @@ set omnifunc=syntaxcomplete#Complete
 
 " important!!
 set termguicolors
-
-" " the configuration options should be placed before `colorscheme miramare`
-let g:miramare_enable_italic = 1
-let g:miramare_disable_italic_comment = 1
-
-colorscheme miramare
 
 if executable('haskell-language-server-wrapper')
           let g:coc_global_extensions = ['coc-json', 'coc-tsserver']
