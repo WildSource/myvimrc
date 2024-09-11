@@ -52,7 +52,7 @@ let g:miramare_disable_italic_comment = 1
 
 colorscheme miramare
 
-if executable('haskell-language-server-wrapper')
+if executable('haskell-language-server-wrapper-2.9.0.1')
           let g:coc_global_extensions = ['coc-json', 'coc-tsserver']
 if !isdirectory(expand('~/.vim'))
             call mkdir(expand('~/.vim'), 'p')
@@ -61,7 +61,7 @@ if !isdirectory(expand('~/.vim'))
 let s:coc_settings = {
                 \ 'languageserver': {
                 \   'haskell': {
-                \     'command': 'haskell-language-server-wrapper',
+                \     'command': 'haskell-language-server-wrapper-2.9.0.1',
                 \     'args': ['--lsp'],
                 \     'rootPatterns': ['*.cabal', 'stack.yaml', 'cabal.project', 'package.yaml'],
                 \     'filetypes': ['haskell', 'lhaskell']
