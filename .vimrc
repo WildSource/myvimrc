@@ -60,7 +60,7 @@ if !isdirectory(expand('~/.vim'))
 let s:coc_settings = {
                 \ 'languageserver': {
                 \   'haskell': {
-                \     'command': 'haskell-language-server-wrapper',
+                \     'command': 'haskell-language-server-wrapper-2.9.0.1',
                 \     'args': ['--lsp'],
                 \     'rootPatterns': ['*.cabal', 'stack.yaml', 'cabal.project', 'package.yaml'],
                 \     'filetypes': ['haskell', 'lhaskell']
