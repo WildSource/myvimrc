@@ -27,6 +27,7 @@ call plug#begin()
     Plug 'mattn/emmet-vim'
     Plug 'elzr/vim-json'
     Plug 'pangloss/vim-javascript'
+    Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 colorscheme nord
