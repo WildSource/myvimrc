@@ -32,8 +32,6 @@ call plug#end()
 
 colorscheme nord
 
-let g:user_emmet_leader_key=','
-
 augroup ft_haskell
     au!
     au FileType haskell setlocal omnifunc=haskellcomplete#Complete
