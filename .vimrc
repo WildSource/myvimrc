@@ -21,7 +21,8 @@ xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
 call plug#begin()
     Plug 'preservim/nerdtree'
-    Plug 'nordtheme/vim'
+    " Plug 'nordtheme/vim'
+    Plug 'felipevolpone/mono-theme'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-airline/vim-airline'
     Plug 'spolu/dwm.vim'
@@ -39,7 +40,7 @@ call plug#begin()
     Plug 'ziglang/zig.vim'
 call plug#end()
 
-colorscheme nord
+colorscheme mono 
 
 augroup ft_haskell
     au!
