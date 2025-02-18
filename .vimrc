@@ -42,6 +42,8 @@ call plug#end()
 
 colorscheme mono 
 
+hi Normal guibg=NONE ctermbg=NONE
+
 augroup ft_haskell
     au!
     au FileType haskell setlocal omnifunc=haskellcomplete#Complete
