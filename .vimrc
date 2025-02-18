@@ -3,6 +3,9 @@ set tabstop=2
 set expandtab
 set scrolloff=10
 
+" Set specific tab width for HTML
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
 syntax on
 
 set backspace=indent,eol,start  " more powerful backspacing
@@ -10,6 +13,11 @@ set backspace=indent,eol,start  " more powerful backspacing
 " now it is possible to paste many times over selected text
 xnoremap <expr> p 'pgv"'.v:register.'y`>'
 xnoremap <expr> P 'Pgv"'.v:register.'y`>'
+
+"zig.enabled": true,
+"zig.startUpMessage": true,
+"zig.path": "zls",
+"zig.debugLog": false,
 
 call plug#begin()
     Plug 'preservim/nerdtree'
@@ -28,6 +36,7 @@ call plug#begin()
     Plug 'elzr/vim-json'
     Plug 'pangloss/vim-javascript'
     Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'ziglang/zig.vim'
 call plug#end()
 
 colorscheme nord
