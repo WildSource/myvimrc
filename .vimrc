@@ -21,8 +21,7 @@ xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
 call plug#begin()
     Plug 'preservim/nerdtree'
-    " Plug 'nordtheme/vim'
-    Plug 'felipevolpone/mono-theme'
+    Plug 'nordtheme/vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-airline/vim-airline'
     Plug 'spolu/dwm.vim'
@@ -40,8 +39,9 @@ call plug#begin()
     Plug 'ziglang/zig.vim'
 call plug#end()
 
-colorscheme mono 
+colorscheme nord 
 
+" Remove bg color
 hi Normal guibg=NONE ctermbg=NONE
 
 augroup ft_haskell
