@@ -14,11 +14,6 @@ set backspace=indent,eol,start  " more powerful backspacing
 xnoremap <expr> p 'pgv"'.v:register.'y`>'
 xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
-"zig.enabled": true,
-"zig.startUpMessage": true,
-"zig.path": "zls",
-"zig.debugLog": false,
-
 call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'nordtheme/vim'
@@ -44,42 +39,14 @@ colorscheme nord
 " Remove bg color
 hi Normal guibg=NONE ctermbg=NONE
 
-augroup ft_haskell
-    au!
-    au FileType haskell setlocal omnifunc=haskellcomplete#Complete
-augroup END
-
 " JavaScript/JSX-specific settings
 augroup ft_javascript
     au!
     au FileType javascript,typescripx,tsx setlocal tabstop=2 shiftwidth=2
 augroup END
 
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
 " important!!
 set termguicolors
-
-if executable('haskell-language-server-wrapper')
-          let g:coc_global_extensions = ['coc-json', 'coc-tsserver']
-if !isdirectory(expand('~/.vim'))
-            call mkdir(expand('~/.vim'), 'p')
-              endif
-
-let s:coc_settings = {
-                \ 'languageserver': {
-                \   'haskell': {
-                \     'command': 'haskell-language-server-wrapper',
-                \     'args': ['--lsp'],
-                \     'rootPatterns': ['*.cabal', 'stack.yaml', 'cabal.project', 'package.yaml'],
-                \     'filetypes': ['haskell', 'lhaskell']
-                \   }
-                \ }
-                \ }
-
-call writefile([json_encode(s:coc_settings)], expand('~/.vim/coc-settings.json'))
-endif
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <silent><expr> <C-Space> coc#refresh()
