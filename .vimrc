@@ -16,8 +16,8 @@ xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
 call plug#begin()
     Plug 'preservim/nerdtree'
-    Plug 'nordtheme/vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'jaredgorski/Mies.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'spolu/dwm.vim'
     " for vim-hoogle to work install hoogle through cabal or stack
@@ -34,10 +34,11 @@ call plug#begin()
     Plug 'ziglang/zig.vim'
 call plug#end()
 
-colorscheme nord 
+set background=light
+colorscheme mies 
 
 " Remove bg color
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " JavaScript/JSX-specific settings
 augroup ft_javascript
